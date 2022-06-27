@@ -1,0 +1,47 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.download-item {
+		@extend %border-divider;
+		text-decoration: none;
+		color: inherit;
+		display: flex;
+		justify-content: space-between;
+
+		.download-item-title {
+			@extend %p-style;
+			flex-basis: 60%;
+			padding-right: 10%;
+			margin-bottom: 0;
+
+			@include breakpoint(large) {
+				flex-basis: 80%;
+			}
+		}
+
+		.download-item-file-and-arrow {
+			display: flex;
+			align-items: center;
+			flex-basis: auto;
+
+			.download-item-file-type {
+				@extend %text-small;
+				text-transform: uppercase;
+				margin-right: 10px;
+				margin-bottom: 0;
+
+				@include breakpoint(large) {
+					margin-right: 30px;
+				}
+
+			}
+			.download-item-arrow {
+				width: 35px;
+				display: block;
+				margin-left: auto;
+
+				@include breakpoint(large) {
+					width: 40px;
+				}
+			}
+		}
+}

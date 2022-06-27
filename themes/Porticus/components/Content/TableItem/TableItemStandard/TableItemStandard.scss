@@ -1,0 +1,64 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.table-item.standard {
+	@include breakpoint(small only) {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+	}
+
+	table {
+		border: none;
+
+		tbody {
+			background: none;
+			border: none;
+			color: $black;
+
+			tr {
+				background: none;
+
+				td {
+					@extend %text-small;
+					position: relative;
+					padding: 20px 40px 20px 0;
+					border: none;
+
+					&:before {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						content: '';
+						width: 100%;
+						height: 1px;
+						display: block;
+						background-color: $black;
+					}
+
+					&:after {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						content: '';
+						width: 20px;
+						height: 1px;
+						display: block;
+						background-color: $white;
+					}
+				}
+
+				&:first-child {
+					td {
+						&:before {
+							height: 2px;
+						}
+
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

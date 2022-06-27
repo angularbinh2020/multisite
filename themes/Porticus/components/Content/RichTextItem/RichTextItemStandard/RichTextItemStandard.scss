@@ -1,0 +1,27 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.rich-text-item.standard {
+	ul, ol {
+		margin-left: 40px;
+
+		li {
+			margin-bottom: $small-spacing;
+
+			a {
+				color: $black;
+				text-decoration: none;
+				border-bottom: 1px solid $black;
+
+				&:hover {
+					font-style: italic;
+				}
+			}
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6, p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

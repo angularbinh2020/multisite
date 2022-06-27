@@ -1,0 +1,9 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.curated-list-module.standard {
+	.curated-list-title {
+		@extend %h3-style;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}

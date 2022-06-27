@@ -1,0 +1,23 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.priority-content-page.grid-view {
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		.priority-content-img {
+			width: 100%;
+			margin-bottom: 6%;
+		}
+
+		.priority-content-title {
+			@extend %p-style;
+		}
+
+		&:hover {
+			.Priority-content-title {
+				font-style: italic;
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.decision-tree-module.standard {
+	margin-bottom: $medium-spacing;
+
+	.decision-tree-module-title {
+		text-transform: uppercase;
+		border-bottom: 5px solid $black;
+		padding-bottom: 20px;
+	}
+
+	.decision-tree-select {
+		margin-bottom: $small-spacing;
+
+		.dropdown-replacement {
+			.dropdown-replacement-selected {
+				span {
+					@extend %h4-style;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+@import '../../../Styles/SassResources/sass-resources.scss';
+
+.pagination {
+	list-style-type: none;
+	margin-top: $medium-spacing;
+
+	li {
+		display: inline;
+		cursor: pointer;
+
+		&.pagination-item {
+			@extend %p-style;
+			margin: 0 15px;
+
+			&.current {
+				font-weight: $font-weight-bold;
+			}
+		}
+
+		&.pagination-previous {
+			margin-right: $small-spacing;
+
+			@include breakpoint(large) {
+				margin-right: 10%;
+			}
+		}
+
+		&.pagination-next {
+			margin-left: $small-spacing;
+
+			@include breakpoint(large) {
+				margin-left: 10%;
+			}
+		}
+	}
+
+	.carousel-nav-arrow {
+		width: 35px;
+
+		@include breakpoint(large) {
+			width: 60px;
+		}
+	}
+}

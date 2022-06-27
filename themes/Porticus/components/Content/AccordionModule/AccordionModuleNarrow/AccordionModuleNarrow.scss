@@ -1,0 +1,76 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.accordion-module.narrow {
+	padding: $small-spacing 0;
+
+	@include breakpoint(medium) {
+		padding: 0;
+		margin-left: 0;
+		background: none !important; //to override inline style
+	}
+
+	.accordion-module-canvas {
+		@include breakpoint(small only) {
+			background: none !important; //to override inline style
+		}
+
+		@include breakpoint(medium) {
+			padding: $medium-spacing;
+			margin-right: calc(-#{rem-calc(map-get($grid-container-gutters, medium))} / 2);
+		}
+
+		@include breakpoint(large) {
+			margin-right: calc(-#{rem-calc(map-get($grid-container-gutters, large))} / 2);
+		}
+
+		@include breakpoint(xlarge) {
+			margin-right: 0;
+		}
+
+		.accordion-module-title-wrapper {
+			max-width: 200px;
+
+			@include breakpoint(large) {
+				max-width: 300px;
+			}
+
+			@include breakpoint(xlarge) {
+				height: 100%;
+				display: flex;
+				align-items: flex-end;
+			}
+
+			.accordion-module-title {
+				@include breakpoint(xlarge) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.accordion-list {
+			border-top: 1px solid $black;
+			padding-top: 20px;
+
+			.accordion-list-item {
+				margin-bottom: 30px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.accordion-list-item-title {
+					@extend %h5-style;
+					cursor: pointer;
+				}
+
+				.accordion-list-item-content {
+					overflow: hidden;
+
+					p, ul li {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,153 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.experience-banner-item.standard {
+	position: relative;
+	padding-top: $large-spacing;
+	margin-bottom: $medium-spacing;
+	overflow: hidden;
+
+	@include breakpoint(large) {
+		padding-top: 0;
+		margin-bottom: 0;
+	}
+
+	.experience-banner-item-title {
+		@extend %h4-style;
+
+		@include breakpoint(large) {
+			position: absolute;
+			top: 15%;
+			max-width: 45%;
+			z-index: 1;
+		}
+	}
+
+	.paired-images-item {
+		display: flex;
+		position: relative;
+		margin-top: $small-spacing;
+		margin-bottom: $small-spacing;
+
+		@include breakpoint(large) {
+			height: 100vh;
+			align-items: flex-end;
+		}
+
+		.paired-images-item-large {
+			width: 100%;
+			max-width: 85%;
+			margin-left: auto;
+			align-self: flex-end;
+
+			@include breakpoint(large) {
+				max-width: 100%;
+				margin-left: 0;
+			}
+		}
+
+		.paired-images-item-small {
+			position: absolute;
+			bottom: 0;
+			max-width: 45%;
+
+			@include breakpoint(large) {
+				left: -30%;
+			}
+		}
+	}
+
+	.experience-banner-item-copy-wrapper {
+		@include breakpoint(large) {
+			height: 100vh;
+			max-height: -webkit-fill-available;
+			display: flex;
+			align-items: flex-end;
+		}
+
+		.experience-banner-item-copy {
+			@include breakpoint(large) {
+				@media (hover: none) and (pointer: coarse) {
+					padding-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	.scroll-indicator {
+		display: none;
+
+		@include breakpoint(large) {
+			position: absolute;
+			top: 50%;
+			right: 15px;
+			transform: translate(-50px, -50%);
+			z-index: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			transition: all 1s;
+			transition-timing-function: $transition-ease;
+		}
+
+		.on-load-swipe-started & {
+			@include breakpoint(large) {
+				transform: translate(0, -50%);
+				opacity: 1;
+				transition-delay: 2s;
+			}
+		}
+
+		span {
+			@extend %text-small;
+			font-weight: 500;
+			margin-bottom: 0;
+			letter-spacing: 0.5px;
+			display: block;
+			text-transform: uppercase;
+		}
+
+		img {
+			width: 20px;
+			margin: 5px 0 0 10px;
+		}
+	}
+}
+
+.experience-banner-item.standard {
+	.paired-images-item-small,
+	.paired-images-item-large {
+		@include breakpoint(large) {
+			transform: translateX(70%);
+			transition: all 0.8s;
+			transition-timing-function: $transition-ease;
+		}
+
+		.slick-active & {
+			.on-load-swipe-started & {
+				@include breakpoint(large) {
+					transform: translateX(0);
+				}
+			}
+		}
+
+		.direction-slide-left &,
+		.direction-slide-right & {
+			@include breakpoint(large) {
+				transform: translateX(-70%);
+			}
+		}
+	}
+
+	.paired-images-item-large {
+		@include breakpoint(large) {
+			transition-delay: $home-transition-delay;
+		}
+	}
+
+	.paired-images-item-small {
+		@include breakpoint(large) {
+			transition-delay: calc(#{$home-transition-delay} * 3);
+		}
+	}
+}

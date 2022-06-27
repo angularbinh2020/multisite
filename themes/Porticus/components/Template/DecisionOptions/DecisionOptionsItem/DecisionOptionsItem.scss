@@ -1,0 +1,22 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.decision-options-item {
+	.decision-options-item-question {
+		@extend %text-large;
+	}
+
+	.decision-options-item-group {
+		display: flex;
+		flex-wrap: wrap;
+
+		.radio-wrapper {
+			flex-basis: 30%;
+			width: 30%;
+			margin-right: 3%;
+		}
+	}
+
+	.code-to-display {
+		margin-top: $medium-spacing;
+	}
+}

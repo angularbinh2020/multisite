@@ -1,0 +1,50 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.header-item.landing {
+	position: relative;
+	margin-bottom: 50px;
+
+	.colour-block {
+		@include angle(after, true, 3deg);
+		background-color: $core-colour-1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 70%;
+
+		@include breakpoint(xlarge) {
+			height: 50%;
+		}
+	}
+
+	.header-item-text {
+		padding-top: 100px;
+		position: relative;
+		z-index: 2;
+
+		@include breakpoint(large) {
+			padding-top: 14%;
+		}
+
+		@include breakpoint(xxlarge) {
+			padding-top: 180px;
+		}
+
+		p {
+			@extend %text-large;
+			margin-bottom: 0;
+		}
+	}
+
+	.header-item-image {
+		display: block;
+		position: relative;
+		z-index: 2;
+		margin-top: $small-spacing;
+
+		@include breakpoint(large) {
+			margin: -4% auto 0;
+		}
+	}
+}

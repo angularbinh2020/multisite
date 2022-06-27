@@ -1,0 +1,70 @@
+@import 'node_modules/foundation-sites/scss/util/util';
+
+// // Theme / brand colours
+// // ======================
+$core-colour-1: #80bc9d; //green
+$core-colour-2: #fd511f; //orange
+$core-colour-3: #048595; //blue
+$core-colour-4: #8b53ab; //purple
+$core-colour-5: #f4f0e9;
+
+
+
+// // Core 'common' colours
+// // ======================
+$white: #fff;
+$black: #000;
+$grey: #666666; //grey
+$grey-dark: #1f1a1a; //dark grey
+$grey-mid: #b5aca5; //mid grey
+$grey-light: #e9e6e4; //light grey
+
+
+// // Typography
+// // ======================
+
+// // Font families...
+$font-family-primary: 'NationalWeb', sans-serif, Arial, 'Helvetica Neue', Helvetica;
+$font-family-secondary: 'ChronicleDisplay', serif;
+
+// // Font weighting...
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+// $font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// // Base font size
+$base-font-size: 16px;
+
+
+// // spacing
+// // ======================
+$xsmall-spacing: 20px;
+$small-spacing: 30px;
+$medium-spacing: 60px;
+$large-spacing: 100px;
+$xlarge-spacing: 200px;
+
+
+// // transition speeds
+// // ======================
+$slow-speed: 1s;
+$medium-speed: 0.5s;
+$fast-speed: 0.25s;
+$home-transition-speed: 1.2s;
+$home-transition-delay: 0.1s;
+$transition-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+
+//Screen widths
+$desktop-design-width: 1440;
+$small-design-width: 768;
+$large-design-width: 1440;
+
+
+//Design widths are static width in design - used to calculate VW
+//$design-widths: 375, 992, 1440;
+
+//foundation breakpoints
+$font-breakpoint: map-get($breakpoints, medium);

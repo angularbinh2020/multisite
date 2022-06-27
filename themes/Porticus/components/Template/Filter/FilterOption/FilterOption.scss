@@ -1,0 +1,13 @@
+@import "../../../../Styles/SassResources/sass-resources.scss";
+
+.filter-results-filter-item {
+	margin-bottom: $xsmall-spacing;
+	flex-basis: 100%;
+
+	@include breakpoint(large) {
+		flex-grow: 1;
+		margin-bottom: $small-spacing;
+		margin-right: $small-spacing;
+		max-width: 500px;
+	}
+}

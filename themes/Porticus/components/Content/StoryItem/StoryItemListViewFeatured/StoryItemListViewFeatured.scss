@@ -1,0 +1,14 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.story-item.list-view.featured {
+	@extend %border-divider;
+
+	.story-item-img {
+		width: 100%;
+	}
+
+	.story-item-title {
+		@extend %h4-style;
+		margin-top: 3%;
+	}
+}

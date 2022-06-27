@@ -1,0 +1,119 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.homepage-header-item.standard {
+	position: relative;
+	padding-top: $large-spacing;
+	margin-bottom: $small-spacing;
+
+	@include breakpoint(large) {
+		padding-top: 0;
+		margin-bottom: $large-spacing;
+	}
+
+	.homepage-header-item-title {
+		@extend %h4-style;
+
+		@include breakpoint(large) {
+			position: absolute;
+			top: 110px;
+			max-width: 45%;
+			z-index: 1;
+		}
+	}
+
+	.homepage-header-item-images {
+		display: flex;
+		position: relative;
+		margin-top: $small-spacing;
+		margin-bottom: $small-spacing + $medium-spacing;
+
+		@include breakpoint(large) {
+			height: 100vh;
+			align-items: flex-end;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.header-item-images.position-0 {
+			width: 100%;
+			max-width: 85%;
+			margin-left: auto;
+			align-self: flex-end;
+
+			@include breakpoint(large) {
+				max-width: 100%;
+				margin-left: 0;
+			}
+		}
+
+		.header-item-images.position-1 {
+			position: absolute;
+			bottom: -$medium-spacing;
+			max-width: 45%;
+
+			@include breakpoint(large) {
+				left: -30%;
+			}
+		}
+	}
+
+	.homepage-header-item-copy-wrapper {
+		@include breakpoint(large) {
+			height: 110vh;
+			max-height: -webkit-fill-available;
+			display: flex;
+			align-items: flex-end;
+		}
+
+		.homepage-header-item-copy {
+			@include breakpoint(large) {
+				@media (hover: none) and (pointer: coarse) {
+					padding-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	//LOAD ANIMATIONS
+	.header-item-images.position-0,
+	.header-item-images.position-1 {
+		@include breakpoint(large) {
+			transform: translateY(60px);
+			opacity: 0;
+			transition: all 1s;
+			transition-timing-function: $transition-ease;
+		}
+
+		.on-load-swipe-started & {
+			@include breakpoint(large) {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+
+	.header-item-images.position-0 {
+		transition-delay: $home-transition-delay;
+	}
+
+	.header-item-images.position-1 {
+		transition-delay: $home-transition-delay *3;
+	}
+
+	.homepage-header-item-copy-wrapper {
+		@include breakpoint(large) {
+			transform: translateY(60px);
+			opacity: 0;
+			transition: all 1s;
+			transition-timing-function: $transition-ease;
+			transition-delay: $home-transition-delay * 3;
+		}
+
+		.on-load-swipe-started & {
+			@include breakpoint(large) {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+}

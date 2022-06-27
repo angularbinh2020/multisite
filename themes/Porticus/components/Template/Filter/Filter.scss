@@ -1,0 +1,54 @@
+@import '../../../Styles/SassResources/sass-resources.scss';
+
+.filter-wrapper {
+	.filter-controls-wrapper {
+		position: relative;
+		z-index: 1;
+	}
+
+	.filter-controls{
+		width: 100%;
+		display: flex;
+		flex-flow: wrap;
+		margin-bottom: $small-spacing;
+
+		@include breakpoint(large) {
+			justify-content: space-between;
+			flex-flow: initial;
+			align-items: flex-end;
+		}
+
+		.dropdown-replacement-wrapper {
+			margin-bottom: 0;
+
+			.dropdown-replacement-selected span {
+				@extend %p-style;
+				margin-bottom: 0;
+			}
+		}
+
+		.filter-controls-apply,
+		.filter-controls-clear {
+			border-bottom: none;
+			text-decoration: underline;
+
+			@include breakpoint(large) {
+				margin-left: $small-spacing;
+			}
+		}
+
+		.filter-controls-apply {
+			@include breakpoint(medium down) {
+				flex-grow: 1;
+				text-align: left;
+			}
+		}
+
+		.filter-controls-clear {
+			@include breakpoint(medium down) {
+				flex-grow: 1;
+				text-align: right;
+			}
+		}
+	}
+}

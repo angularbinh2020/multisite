@@ -1,0 +1,22 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.anchor-links-module.standard {
+	.anchor-links-wrapper {
+		@extend %border-divider;
+		border-width: 5px;
+		margin-bottom: 0;
+		padding-bottom: 15px;
+		padding-top: 15px;
+		text-align: center;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+
+		.anchor-links {
+			@include breakpoint(small only) {
+				width: max-content;
+				min-width: 100%;
+			}
+		}
+	}
+}

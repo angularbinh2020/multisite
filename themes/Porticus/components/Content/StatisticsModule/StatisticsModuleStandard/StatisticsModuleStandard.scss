@@ -1,0 +1,9 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.statistics-module.standard {
+	.statistics-module-heading {
+		@extend %p-style;
+		border-bottom: 2px solid $black;
+		padding-bottom: $small-spacing;
+	}
+}

@@ -1,0 +1,77 @@
+@import "../../../../../Styles/SassResources/sass-resources.scss";
+
+.media-module-item {
+	.media-module-item-image {
+		height: 130px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		margin-bottom: $small-spacing;
+
+		@include breakpoint(medium) {
+			height: 200px;
+			margin-bottom: $medium-spacing;
+		}
+	}
+
+	.media-module-item-title {
+		@extend %h4-style;
+		border-bottom: 1px solid $black;
+		padding-bottom: 20px;
+		margin-bottom: $small-spacing;
+		color: $black;
+
+		@include breakpoint(large) {
+			margin-bottom: $medium-spacing;
+		}
+	}
+
+	.media-module-item-list {
+		list-style: none;
+		padding: 0 20px 0 60px;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+
+		@include breakpoint(medium) {
+			padding: 0;
+		}
+
+		> li {
+			width: 100%;
+			margin-bottom: 60px;
+
+			@include breakpoint(medium) {
+				width: calc(33.33333% - 1.66667rem);
+				margin-left: 2.5rem;
+			}
+
+			&:first-child,
+			&:nth-child(3n + 4) {
+				@include breakpoint(medium) {
+					margin-left: 0;
+				}
+			}
+
+			img {
+				width: 100%;
+				margin-bottom: $small-spacing;
+			}
+
+			.media-module-item-list-title {
+				color: $black;
+				font-weight: $font-weight-bold;
+				margin-bottom: 0;
+			}
+
+			.media-module-item-list-file {
+				margin-bottom: $small-spacing;
+			}
+
+			.cta {
+				color: $black;
+			}
+		}
+	}
+}

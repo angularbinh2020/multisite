@@ -1,0 +1,8 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.accordion-module.standard {
+	.accordion-module-title {
+		@extend %h3-style;
+		text-transform: uppercase;
+	}
+}

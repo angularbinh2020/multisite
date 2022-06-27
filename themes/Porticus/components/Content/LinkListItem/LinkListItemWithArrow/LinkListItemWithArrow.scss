@@ -1,0 +1,36 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.link-list-item.with-arrow {
+	ul {
+		list-style-type: none;
+
+		li {
+			@extend %border-divider;
+
+			a {
+				display: flex;
+				justify-content: space-between;
+				text-decoration: none;
+				color: inherit;
+
+				.list-item-text {
+					@extend %text-large;
+					margin-bottom: 0;
+				}
+
+				.list-item-arrow {
+					width: 35px;
+					display: block;
+
+					@include breakpoint(large) {
+						width: 50px;
+					}
+				}
+
+				&:hover {
+					font-style: italic;
+				}
+			}
+		}
+	}
+}

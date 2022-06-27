@@ -1,0 +1,61 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.tabs-module.standard {
+	.tabs-module-title {
+		@extend %h3-style;
+		text-align: center;
+		text-transform: uppercase;
+
+		@include breakpoint(medium down) {
+			margin-bottom: $xsmall-spacing;
+		}
+	}
+
+	.tabs-module-controls-wrapper {
+		@include breakpoint(medium down) {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			-ms-overflow-style: -ms-autohiding-scrollbar;
+			padding-top: $small-spacing;
+		}
+
+		.tabs-module-controls {
+			list-style-type: none;
+			padding: 0;
+			margin: 0 0 0 0;
+			width: max-content;
+
+			li {
+				display: inline-block;
+				margin-right: 30px;
+				margin-bottom: $xsmall-spacing;
+				cursor: pointer;
+				position: relative;
+				transition: all $fast-speed;
+				border-bottom: 2px solid $black;
+
+				&:hover {
+					font-style: italic;
+				}
+
+				&.active {
+					transform: translateY(-30px);
+					border: none;
+
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						bottom: -#{$xsmall-spacing};
+						left: 50%;
+						transform: translateX(-50%);
+						width: 12px;
+						height: 12px;
+						border-radius: 50%;
+						background-color: $black;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@import "../../../../Styles/SassResources/sass-resources.scss";
+
+.iframe-item {
+	margin-top: $small-spacing;
+	margin-bottom: $medium-spacing;
+
+	> iframe {
+		width: 100%;
+		height: 800px;
+	}
+}

@@ -1,0 +1,81 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.accordion-item.standard {
+	margin-bottom: $small-spacing;
+	border-bottom: 1px solid $black;
+
+	.accordion-item-title-container {
+		cursor: pointer;
+
+		@include breakpoint(medium) {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.accordion-item-title {
+			@extend %text-large;
+			margin-bottom: 0;
+		}
+
+		.accordion-item-sub-title {
+			@extend %text-large;
+			margin-bottom: 0;
+		}
+
+		.subtitle-and-icon {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.accordion-icon {
+				width: 24px;
+				height: 24px;
+				position: relative;
+				margin-left: $small-spacing;
+
+				@include breakpoint(large) {
+					width: 46px;
+					height: 46px;
+					margin-left: $large-spacing;
+				}
+
+				&:before,
+				&:after {
+					content: '';
+					width: 100%;
+					height: 2px;
+					display: block;
+					background-color: $black;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+
+				&:after {
+					width: 2px;
+					height: 100%;
+					transition: opacity $fast-speed;
+				}
+			}
+		}
+	}
+
+	&.active {
+		.accordion-icon {
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+
+	.accordion-item-content {
+		overflow: hidden;
+		padding-top: $small-spacing;
+
+		//important to override hardcoded height 
+		img {
+			height: auto !important;
+		}
+	}
+}

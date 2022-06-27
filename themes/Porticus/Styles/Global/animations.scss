@@ -1,0 +1,100 @@
+@import '../SassResources/sass-resources.scss';
+
+.add-active {
+	&.fade-up {
+		padding-top: 60px;
+		opacity: 0;
+		transition: all 0.8s;
+		transition-timing-function: $transition-ease;
+
+		&.active {
+			padding-top: 0;
+			opacity: 1;
+		}
+	}
+
+}
+
+/**
+ * Classes for TemplatePicker page-transition animation.
+ */
+ .page-transition {
+	overflow-x: hidden;
+ }
+
+ .standard.page-transition,
+ .fade.page-transition {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: $core-colour-1;
+  }
+
+  &--first,
+  &--in {
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+      transition: 500ms opacity ease-in,
+        0ms visibility 500ms;
+    }
+  }
+  
+  &--out {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      transition: 500ms opacity ease-in;
+    }
+  }
+}
+
+
+
+.swipe.page-transition {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    //background-color: #f00;
+    background-color: $core-colour-1;
+    transform: scaleX(3) skew(-6deg);
+  }
+
+  &--first,
+  &--in {
+    &::after {
+      transform: translate(-100%, 0) skew(0deg) scaleX(1);
+      transition: 1500ms transform ease-out;
+    }
+  }
+  
+  &--out {
+    &::after {
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+    }
+  }
+
+}

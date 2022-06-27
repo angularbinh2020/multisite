@@ -1,0 +1,383 @@
+@import '../SassResources/sass-resources.scss';
+
+//overflow
+body {
+	overflow-x: hidden;
+}
+
+.page-bg-colour-wrapper {
+	background-color: $core-colour-5;
+}
+
+.noscroll {
+	position: fixed;
+	width: 100vw;
+	overflow: hidden;
+}
+
+.grid-container {
+	.grid-container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+// Global section spacing rule
+.component-wrapper {
+	padding-top: $xsmall-spacing;
+	padding-bottom: $xsmall-spacing;
+
+	@include breakpoint(large) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	&.no-spacing-bottom {
+		padding-bottom: 0;
+	}
+}
+
+.pullup-block {
+	display: none;
+
+	@include breakpoint(medium) {
+		display: block;
+		height: 140px;
+		margin-top: -200px;
+		background-color: $white;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.pullup-block-overlay {
+	@include breakpoint(medium) {
+		margin-top: -100px;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+// CTA style
+.cta {
+	@extend %p-style;
+	line-height: 1;
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 2px solid $black;
+
+	&:hover {
+		font-style: italic;
+	}
+
+	&.small {
+		@extend %p-style;
+	}
+}
+
+.image-with-caption {
+	margin: 0;
+
+	img {
+		margin-bottom: 10px;
+	}
+
+	.image-caption {
+		@extend %p-style;
+		font-style: italic;
+	}
+}
+
+.bg-image-caption {
+	@extend %p-style;
+	font-style: italic;
+	display: block;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+}
+
+ol {
+	padding: 0 0 0 20px;
+	counter-reset:item;
+
+	@include breakpoint(large) {
+		padding: 0;
+	}
+
+	li {
+		margin: 0;
+		list-style-type: none;
+		counter-increment: item;
+		position: relative;
+
+		&:before {
+			@extend %h4-style;
+			@include fluid-fonts(70,70);
+			margin-bottom: 0;
+			position: absolute;
+			width: 12vw;
+			left: -14vw;
+			top: -0.7rem;
+			text-align: right;
+			content:counter(item) ".";
+
+			@include breakpoint(large) {
+				width: 5.8vw;
+				left: -7.25vw;
+				top: -1.75rem;
+			}
+		}
+
+		h1, h2, h3, h4, h5 {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+
+// Making sure not styled as list component if a class beginning with / containing 'grid-' is added to an 'ol' or 'ul'
+ul,
+ol {
+	&.row, // Will remove this
+	&[class^='grid-'],
+	&[class*=' grid-'] {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+//Form elements
+
+form {
+	label {
+		@extend %text-large;
+		margin-bottom: 10px;
+		display: block;
+
+		 a {
+			color: inherit;
+			text-decoration: none;
+			border-bottom: 1px solid $black;
+
+			&:hover {
+				font-style: italic;
+			}
+		}
+	}
+
+	input {
+		@extend %text-small;
+		width: 100%;
+		border: none;
+		border-radius: 0;
+		border-bottom: 1px solid $black;
+		padding-bottom: $xsmall-spacing;
+		margin-bottom: $xsmall-spacing;
+		background-color: transparent;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	textarea {
+		@extend %text-small;
+		width: 100%;
+		border: 1px solid $black;
+		background-color: transparent;
+		padding: 20px;
+		margin-bottom: $xsmall-spacing;
+	}
+
+	select {
+		@extend %text-small;
+		margin-bottom: $small-spacing;
+	}
+
+	::placeholder {
+		opacity: 0.5;
+	}
+
+	:-ms-input-placeholder {
+		opacity: 0.5;
+	}
+
+	::-ms-input-placeholder {
+		opacity: 0.5;
+	}
+
+	.checkbox {
+		display: flex;
+		margin-bottom: $xsmall-spacing;
+
+		input {
+			width: auto;
+			margin: 3px 15px 0 0;
+
+			@include breakpoint(large) {
+				margin: 8px 15px 0 0;
+			}
+		}
+
+		label {
+			@extend %text-small;
+			margin-bottom: 0;
+		}
+	}
+
+	.error {
+		input, textarea {
+			border-color: $core-colour-2;
+		}
+
+		.error-text {
+			color: $core-colour-2;
+			display: block;
+			margin-top: -20px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.select-wrapper {
+	position: relative;
+
+	@include breakpoint(large) {
+		display: none;
+	}
+
+	select {
+		@extend %p-style;
+		border: none;
+		box-shadow: none;
+		background-color: transparent;
+		border-bottom: 1px solid $black;
+		padding-bottom: 10px;
+		margin-bottom: 0;
+		-webkit-appearance: none;
+   		-moz-appearance: none;
+
+		@include breakpoint(medium down) {
+			background-image: url('/ui/icons/PorticusMobileDropdown.svg');
+			background-repeat: no-repeat;
+			background-position: center right;
+		}
+
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background: none;
+		}
+	}
+
+	i {
+		display: none;
+		font-size: 1.5rem;
+		position: absolute;
+		right: 0;
+		margin-right: 10px;
+
+		@include breakpoint(large) {
+			display: block;
+		}
+	}
+}
+
+.dropdown-replacement-wrapper {
+	position: relative;
+	display: none;
+	margin-bottom: $small-spacing;
+
+	@include breakpoint(large) {
+		display: block;
+	}
+
+	.dropdown-replacement {
+		cursor: pointer;
+
+		.dropdown-replacement-selected {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid $black;
+			padding-bottom: 10px;
+
+			span {
+				@extend %text-small;
+				margin-bottom: 10px;
+			}
+		}
+
+		.dropdown-icon {
+			margin-left: 10px;
+			margin-right: 10px;
+
+			@include breakpoint(xlarge) {
+				margin-right: $small-spacing;
+			}
+		}
+
+		&.open {
+			.dropdown-icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.dropdown-replacement-list {
+		list-style-type: none;
+		overflow: hidden;
+		position: absolute;
+		background-color: $core-colour-5;
+		width: 100%;
+		z-index: 1;
+		max-height: 280px;
+		overflow-y: scroll;
+
+		> li {
+			@extend %text-small;
+			margin: 10px;
+
+			&:hover {
+				font-style: italic;
+			}
+		}
+	}
+}
+
+.radio-wrapper {
+	display: flex;
+
+	input[type="radio"] {
+		display: none;
+	}
+
+	.radio-replacement {
+		border-radius: 50%;
+		height: 20px;
+		width: 20px;
+		border: 1px solid $black;
+		margin: 0 15px 0 0;
+		cursor: pointer;
+
+		@include breakpoint(large) {
+			margin: 5px 15px 0 0;
+		}
+
+		&.option-active {
+			background: $black;
+		}
+	}
+
+	label {
+		@extend %text-small;
+		margin-top: 1px;
+	}
+}

@@ -1,0 +1,57 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.panel-experience.standard {
+	display: none;
+
+	&.desktop {
+		display: block;
+		height: 100vh;
+		max-height: -webkit-fill-available;
+		overflow: hidden;
+	}
+
+	&.mobile {
+		display: block;
+		overflow-x: hidden;
+	}
+
+	&.menu-slide {
+		.primary-nav {
+			margin-top: 64px;
+		}
+	}
+
+	.slick-slider {
+		height: 100%;
+
+		.slick-arrow {
+			display: none !important; //overrides inline style
+
+			@include breakpoint(large) {
+				@media (hover: none) and (pointer: coarse) {
+					display: block !important; //overrides above
+					font-size: 0;
+					text-indent: 100%;
+					width: 15px;
+					height: 25px;
+					position: absolute;
+					z-index: 1;
+					bottom: 40px;
+					left: 50px;
+					background-repeat: no-repeat;
+					background-position: center;
+					cursor: pointer;
+
+					&.slick-next {
+						background-image: url('/ui/icons/ChevronRight.svg');
+						left: 100px;
+					}
+
+					&.slick-prev {
+						background-image: url('/ui/icons/ChevronLeft.svg');
+					}
+				}
+			}
+		}
+	}
+}

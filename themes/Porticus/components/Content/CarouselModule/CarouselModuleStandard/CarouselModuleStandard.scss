@@ -1,0 +1,81 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.carousel-module.standard {
+
+
+
+		.carousel-nav {
+			@include breakpoint(medium down) {
+				position: relative;
+				padding: $large-spacing 0 $medium-spacing;
+			}
+
+			@include breakpoint(large) {
+				margin-top: -3em;
+				position: relative;
+				z-index: 1;
+			}
+
+			.nav-prev {
+				@include breakpoint(medium down) {
+					display: none;
+				}
+			}
+
+			.nav-next {
+				@include breakpoint(medium down) {
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+
+			.carousel-nav-arrow {
+				width: 45px;
+
+				@include breakpoint(large) {
+					width: 60px;
+				}
+			}
+
+			span {
+				@extend %text-medium;
+				cursor: pointer;
+			}
+
+			ul {
+				display: inline;
+				list-style-type: none;
+				margin: 0;
+
+				@include breakpoint(large) {
+					margin: 0 6vw;
+				}
+
+				li {
+					display: inline;
+
+					span {
+						@extend %p-style;
+						margin-left: 20px;
+						margin-right: 20px;
+
+						&:first-child() {
+							@include breakpoint(medium down) {
+								margin-left: 0;
+							}
+						}
+
+						&.active {
+							font-weight: $font-weight-bold;
+						}
+
+						&:hover {
+							font-style: italic;
+						}
+					}
+				}
+			}
+		}
+
+}

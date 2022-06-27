@@ -1,0 +1,62 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.promotion-item.standard {
+	.promotion-item-text-content {
+		padding-top: 3%;
+
+		@include breakpoint(large) {
+			padding-left: 20%;
+		}
+
+		.promotion-item-heading {
+			@extend %h4-style;
+		}
+	}
+
+	.promotion-item-media {
+		img {
+			width: 100%;
+		}
+	}
+
+	&.flipped {
+		.promotion-item-text-content-wrapper {
+			@include breakpoint(large) {
+				order: 1;
+			}
+
+			.promotion-item-text-content {
+				@include breakpoint(large) {
+					padding-left: 0;
+					padding-right: 20%;
+				}
+			}
+		}
+
+		.promotion-item-media {
+			@include breakpoint(large) {
+				order: 2;
+			}
+		}
+	}
+
+	&.remove-padding {
+		.promotion-item-text-content-wrapper {
+			.promotion-item-text-content {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6, p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.cta {
+		display: inline-block;
+		margin-top: $small-spacing;
+	}
+}

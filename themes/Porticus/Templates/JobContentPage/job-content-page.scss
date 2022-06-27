@@ -1,0 +1,172 @@
+@import '../../Styles/SassResources/sass-resources.scss';
+
+.job-content-page {
+	#cxsLanguages {
+		display: none;
+	}
+
+	.cxsHeader {
+		@extend %h4-style;
+		letter-spacing: 0;
+	}
+
+	.cxsSection {
+		margin-bottom: $medium-spacing;
+
+		.cxsSectionHeader {
+			text-transform: uppercase;
+			border-bottom: 5px solid $black;
+			padding-bottom: 20px;
+		}
+	}
+
+	.cxsSectionIntro {
+		@extend %p-style;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			border-bottom: 1px solid $black;
+		}
+	}
+
+	.cxsError {
+		input {
+			border-color: $core-colour-2;
+		}
+
+		.cxsFieldError {
+			color: $core-colour-2;
+			margin-top: -20px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.cxsFieldAfterLabel {
+		display: none;
+	}
+
+	.cxsSelectField {
+		@extend %p-style;
+		border: none;
+		box-shadow: none;
+		background-color: transparent;
+		border-bottom: 1px solid $black;
+		padding-bottom: 10px;
+		margin-bottom: $xsmall-spacing;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background-image: url('/ui/icons/PorticusMobileDropdown.svg');
+		background-repeat: no-repeat;
+		background-position: center right;
+
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background: none;
+		}
+	}
+
+	.cxsFieldType_date {
+		.cxsSeperator {
+			display: none;
+		}
+	}
+
+	.cxsRadiosField {
+		input {
+			width: auto;
+			margin-right: 10px;
+		}
+
+		.cxsRadioLabel {
+			@extend %text-small;
+		}
+	}
+
+	.cxsFieldType_file {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+
+		label {
+			margin-right: 20px;
+			text-align: right;
+			min-width: 13vw;
+			margin-bottom: 0;
+
+			@include breakpoint(medium) {
+				min-width: 6vw;
+			}
+		}
+
+		.cxsFileUpload {
+			display: block;
+			width: 80px;
+			height: 40px;
+			border: 1px solid $black;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@include breakpoint(large) {
+				margin-top: 6px;
+			}
+
+			iframe {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+		}
+
+		.cxsFieldError {
+			margin-top: 0;
+			margin-left: 20px;
+		}
+	}
+
+	.cxsFieldType_checkbox {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		position: relative;
+
+		input {
+			width: auto;
+			margin-right: 10px;
+		}
+
+		label {
+			@extend %text-small;
+			margin-bottom: 0;
+			margin-top: -3px;
+
+			@include breakpoint(medium) {
+				margin-top: -7px;
+			}
+		}
+
+		.cxsFieldError {
+			position: absolute;
+			top: 35px;
+		}
+	}
+
+	.cxsApplyButton {
+		width: auto;
+		@extend %p-style;
+		line-height: 1;
+		color: inherit;
+		text-decoration: none;
+		border-bottom: 2px solid $black;
+		padding: 0;
+
+		&:hover {
+			font-style: italic;
+		}
+	}
+}

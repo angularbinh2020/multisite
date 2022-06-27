@@ -1,0 +1,36 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.story-item.list-view {
+	@extend %border-divider;
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		.story-item-title {
+			@extend %h4-style;
+			padding-right: 10%;
+
+			@include breakpoint(large) {
+				padding-right: 20%;
+				margin-bottom: 0;
+			}
+		}
+
+		.story-item-arrow {
+			width: 35px;
+			display: block;
+			margin-left: auto;
+
+			@include breakpoint(large) {
+				width: 50px;
+			}
+		}
+
+		&:hover {
+			.story-item-title {
+				font-style: italic;
+			}
+		}
+	}
+}

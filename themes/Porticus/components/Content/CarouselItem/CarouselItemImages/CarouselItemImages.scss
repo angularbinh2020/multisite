@@ -1,0 +1,15 @@
+@import '../../../../Styles/SassResources/sass-resources.scss';
+
+.carousel-item.images {
+	margin-bottom: 10px;
+
+	img {
+		width: 100%;
+	}
+
+	.carousel-item-image-caption {
+		@extend %text-small;
+		margin-bottom: 0;
+		margin-top: 5px;
+	}
+}
