@@ -1,4 +1,4 @@
 export const DomainRedirectConfig = {
-  "mogivi.vn": "mogivi",
+  "multisite-two.vercel.app": "mogivi",
   "nhathat.vn": "nhathat",
 };
