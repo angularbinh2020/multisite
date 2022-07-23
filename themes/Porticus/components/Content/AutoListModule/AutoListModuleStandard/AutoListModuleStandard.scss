@@ -1,8 +1,0 @@
-@import '../../../../Styles/SassResources/sass-resources.scss';
-
-.auto-list-module.standard {
-	.auto-list-module-title {
-		@extend %h3-style;
-		text-transform: uppercase;
-	}
-}

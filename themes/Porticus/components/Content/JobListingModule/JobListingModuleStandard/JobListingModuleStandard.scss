@@ -1,8 +1,0 @@
-@import '../../../../Styles/SassResources/sass-resources.scss';
-
-.job-listing-module.standard {
-	.joblisting-module-title {
-		@extend %h3-style;
-		text-transform: uppercase;
-	}
-}
