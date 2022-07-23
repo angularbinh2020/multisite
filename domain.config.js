@@ -1,4 +1,4 @@
 export const DomainRedirectConfig = {
-  "multisite-two.vercel.app": "mogivi",
-  "nhathat.vn": "nhathat",
+  "multisite-git-main-angularbinh2020.vercel.app": "mogivi",
+  "multisite-angularbinh2020.vercel.app": "nhathat",
 };
