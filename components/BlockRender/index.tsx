@@ -1,8 +1,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import { DomainRedirectConfig } from "domain.config";
 import DefaultMissingBlock from "components/DefaultMissingBlock";
 import { IBlock } from "models/blocks/IBlock";
+import SITES from "const/sites";
 
 const MogiviBlockRender = dynamic(
   () => import("sites/mogivi/components/BlockRender")
@@ -17,8 +17,8 @@ interface BlockRenderProps {
 }
 
 const BlockComponent = {
-  [DomainRedirectConfig["mogivi.vn"]]: MogiviBlockRender,
-  [DomainRedirectConfig["nhathat.vn"]]: NhaThatBlockRender,
+  [SITES.MOGIVI]: MogiviBlockRender,
+  [SITES.NHA_THAT]: NhaThatBlockRender,
 };
 
 const BlockRender = (props: BlockRenderProps) => {

@@ -1,15 +1,15 @@
 import DefaultMissingBlock from "components/DefaultMissingBlock";
-import { DomainRedirectConfig } from "domain.config";
 import ILayoutProps from "models/ILayoutProps";
 import React from "react";
 import dynamic from "next/dynamic";
+import SITES from "const/sites";
 
 const MogiviLayout = dynamic(() => import("sites/mogivi/layout"));
 const NhaThatLayout = dynamic(() => import("sites/nhathat/layout"));
 
 const LayoutComponent = {
-  [DomainRedirectConfig["mogivi.vn"]]: MogiviLayout,
-  [DomainRedirectConfig["nhathat.vn"]]: NhaThatLayout,
+  [SITES.MOGIVI]: MogiviLayout,
+  [SITES.NHA_THAT]: NhaThatLayout,
 };
 
 const Layout = (props: ILayoutProps) => {
